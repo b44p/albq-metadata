@@ -1,7 +1,10 @@
 #!/bin/bash
+#City of Albuquerque Metadata extract
+#Author: Varun Adibhatla - argolabs.org
+#flush the results
 >result.csv
 # Remove all existing PDFs
-rm *.pdf
+#rm *.pdf
 #This command extracts all the files containing metadata from https://www.cabq.gov/abq-data/ and adds it to a files.txt
 curl -s https://www.cabq.gov/abq-data/ | grep MetaData.pdf | awk -F\" '{print $2}' | grep MetaData.pdf | sed 's/\/view//g' >files.txt
 #Creating a header
